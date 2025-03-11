@@ -1,0 +1,52 @@
+{
+   "background": {
+      "service_worker": "js/background.js"
+   },
+   "action": {
+      "default_icon": "Icon/icon-19.png",
+      "default_popup": "popup.html",
+      "default_title": "WhatsApp CRM Messenger"
+   },
+   "content_scripts": [
+      {
+         "all_frames": false,
+         "js": [
+            "js/jquery-1.11.3.min.js",
+            "js/jQuery.base64.js",
+            "js/main.js",
+            "js/background.js"
+         ],
+         "matches": [
+            "http://*/*",
+            "https://*/*"
+         ],
+         "run_at": "document_start"
+      }
+   ],
+   "content_security_policy": {
+      "extension": {
+         "script-src": "'self'",
+         "object-src": "'self'"
+      }
+   },
+   "description": "WhatsApp Extension",
+   "homepage_url": "https://web.whatsapp.com/",
+   "icons": {
+      "128": "Icon/icon-64.png",
+      "48": "Icon/icon-48.png"
+   },
+   "manifest_version": 3,
+   "name": "WhatsApp CRM Messenger",
+   "options_page": "",
+   "permissions": [
+      "tabs",
+      "storage",
+      "webNavigation"
+   ],
+   "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+   ],
+   "version": "1.1",
+   "web_accessible_resources": []
+}
